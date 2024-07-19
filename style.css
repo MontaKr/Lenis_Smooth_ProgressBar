@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Primary";
+  src: url(./fonts/questrial.woff) format(woff),
+    url(./fonts//questrial.woff2) format(woff2);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #dfdfdf;
+  --secondary: #212121;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+}
+
+body {
+  font-family: "Primary";
+  background-color: var(--primary);
+  color: var(--secondary);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 8rem;
+  text-transform: uppercase;
+}
+
+span,
+p {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/*?-----------> Lenis CSS Settins */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
