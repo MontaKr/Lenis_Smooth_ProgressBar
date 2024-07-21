@@ -96,3 +96,53 @@ html.lenis {
   object-fit: cover;
   transform: scale(0.5);
 }
+
+/* Content */
+.section_content {
+  display: flex;
+  align-items: center;
+}
+
+.section_content_item {
+  width: 100vw;
+  padding-right: 120rem;
+}
+
+.section_content_item_title {
+  margin-bottom: 3.2rem;
+}
+
+/* Bar */
+.section_bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 6.4rem 3.2rem;
+}
+
+/* Bar Labels*/
+.section_bar_label {
+  margin-bottom: 2.4rem;
+}
+
+.section_bar_label_item {
+  padding: 2.4rem 6.4rem;
+  justify-self: center;
+  border-radius: 0.4rem;
+  border: 1px solid #00000057;
+  background-color: transparent;
+  color: var(--secondary);
+  transition: background-color 0.64s ease-out, color 0.64s ease-out;
+}
+
+.section_bar_label_item.active {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: background-color 0.64s ease-out, color 0.64s ease-out;
+}
+
+.section_bar_label_item {
+  justify-self: end;
+}
