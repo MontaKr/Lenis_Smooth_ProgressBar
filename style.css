@@ -67,6 +67,12 @@ html.lenis {
   pointer-events: none;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1.2fr) 2fr;
+  width: 100%;
+}
+
 /*?-----------> Section */
 .section {
   position: relative;
@@ -137,12 +143,61 @@ html.lenis {
   transition: background-color 0.64s ease-out, color 0.64s ease-out;
 }
 
-.section_bar_label_item.active {
+.section_bar_label_item.--active {
   background-color: var(--secondary);
   color: var(--primary);
   transition: background-color 0.64s ease-out, color 0.64s ease-out;
 }
 
-.section_bar_label_item {
+.section_bar_label_item:last-child {
   justify-self: end;
+}
+
+/* Bar Dots*/
+.section_bar_line_dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  z-index: 20;
+  justify-self: center;
+
+  scale: 0;
+  transition: scale 0.48s ease-out;
+}
+
+.section_bar_line_dot.--active {
+  scale: 1;
+  transition: scale 0.48s ease-out;
+}
+
+.section_bar_line_dot:last-child {
+  justify-self: end;
+  margin-right: 9.6rem;
+}
+
+/* Bar Line*/
+.section_bar_line {
+  position: absolute;
+  left: 0;
+  bottom: 0.8rem;
+  width: 100%;
+  padding: inherit;
+  z-index: -1;
+}
+
+.section_bar_line_filled,
+.section_bar_line_empty {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: var(--secondary);
+  z-index: 100;
+}
+
+.section_bar_line_empty {
+  width: 100%;
+  opacity: 0.2;
 }
