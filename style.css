@@ -201,3 +201,40 @@ html.lenis {
   width: 100%;
   opacity: 0.2;
 }
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: calc(100vw / 768 * 10);
+  }
+  span,
+  p {
+    font-size: 2.4rem;
+  }
+
+  .section_wrapper {
+    width: 100%;
+    padding-top: 16rem;
+  }
+
+  .section_content {
+    flex-direction: column;
+  }
+
+  .section_content_item {
+    padding-right: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .section_bar {
+    background-color: var(--primary);
+  }
+
+  .section_bar_label_item {
+    padding: 0.8rem 1.6rem;
+  }
+
+  .section_bar_line_dot:last-child {
+    margin-right: 4.8rem;
+  }
+}
