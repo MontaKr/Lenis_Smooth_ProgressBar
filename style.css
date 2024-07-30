@@ -1,36 +1,31 @@
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: "Primary";
-  src: url(./fonts/questrial.woff) format(woff),
-    url(./fonts//questrial.woff2) format(woff2);
+  src: url("./fonts/questrial.woff2") format("woff2"),
+    url("./fonts/questrial.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
 :root {
   --primary: #dfdfdf;
   --secondary: #212121;
 }
-
 html {
   font-size: calc(100vw / 1920 * 10);
 }
-
 body {
   font-family: "Primary";
   background-color: var(--primary);
   color: var(--secondary);
   overflow: hidden;
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -39,30 +34,25 @@ h1 {
   font-size: 8rem;
   text-transform: uppercase;
 }
-
 span,
 p {
   font-size: 2rem;
   line-height: 1.2;
 }
 
-/*?-----------> Lenis CSS Settings */
+/*?---------> Lenis CSS Settings */
 html.lenis {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
-
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
-
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
@@ -73,20 +63,19 @@ html.lenis {
   width: 100%;
 }
 
-/*?-----------> Section */
+/*?---------> Section */
 .section {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 6.4rem;
 }
-
 .section_wrapper {
   position: relative;
   width: max-content;
 }
 
-/* background */
+/* Background */
 .section_bg {
   position: fixed;
   left: 0;
@@ -95,7 +84,6 @@ html.lenis {
   height: 100%;
   z-index: -1;
 }
-
 .section_bg_video {
   width: 100%;
   height: 100%;
@@ -108,12 +96,10 @@ html.lenis {
   display: flex;
   align-items: center;
 }
-
 .section_content_item {
   width: 100vw;
   padding-right: 120rem;
 }
-
 .section_content_item_title {
   margin-bottom: 3.2rem;
 }
@@ -128,32 +114,30 @@ html.lenis {
   padding: 6.4rem 3.2rem;
 }
 
-/* Bar Labels*/
+/* Bar Labels */
 .section_bar_label {
   margin-bottom: 2.4rem;
 }
-
 .section_bar_label_item {
   padding: 2.4rem 6.4rem;
   justify-self: center;
+
   border-radius: 0.4rem;
   border: 1px solid #00000057;
   background-color: transparent;
   color: var(--secondary);
   transition: background-color 0.64s ease-out, color 0.64s ease-out;
 }
-
 .section_bar_label_item.--active {
   background-color: var(--secondary);
   color: var(--primary);
   transition: background-color 0.64s ease-out, color 0.64s ease-out;
 }
-
 .section_bar_label_item:last-child {
   justify-self: end;
 }
 
-/* Bar Dots*/
+/* Bar Dots */
 .section_bar_line_dot {
   width: 1.6rem;
   height: 1.6rem;
@@ -165,18 +149,16 @@ html.lenis {
   scale: 0;
   transition: scale 0.48s ease-out;
 }
-
 .section_bar_line_dot.--active {
   scale: 1;
   transition: scale 0.48s ease-out;
 }
-
 .section_bar_line_dot:last-child {
   justify-self: end;
   margin-right: 9.6rem;
 }
 
-/* Bar Line*/
+/* Bar Line */
 .section_bar_line {
   position: absolute;
   left: 0;
@@ -185,7 +167,6 @@ html.lenis {
   padding: inherit;
   z-index: -1;
 }
-
 .section_bar_line_filled,
 .section_bar_line_empty {
   position: absolute;
@@ -196,7 +177,6 @@ html.lenis {
   background-color: var(--secondary);
   z-index: 100;
 }
-
 .section_bar_line_empty {
   width: 100%;
   opacity: 0.2;
@@ -215,25 +195,20 @@ html.lenis {
     width: 100%;
     padding-top: 16rem;
   }
-
   .section_content {
     flex-direction: column;
   }
-
   .section_content_item {
     padding-right: 0;
     width: 100%;
     height: 100vh;
   }
-
   .section_bar {
     background-color: var(--primary);
   }
-
   .section_bar_label_item {
     padding: 0.8rem 1.6rem;
   }
-
   .section_bar_line_dot:last-child {
     margin-right: 4.8rem;
   }

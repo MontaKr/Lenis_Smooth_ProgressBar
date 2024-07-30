@@ -4,16 +4,15 @@ let percentage;
 const progressBar = {
   element: document.querySelector(".section_bar"),
   line: document.querySelector(".section_bar_line_filled"),
-  dots: document.querySelector(".section_bar_line_dot"),
-  labels: document.querySelector(".section_bar_label_item"),
+  dots: document.querySelectorAll(".section_bar_line_dot"),
+  labels: document.querySelectorAll(".section_bar_label_item"),
 };
-
 const progressBarOffset =
   (progressBar.element.getBoundingClientRect().left / window.innerWidth) * 100;
 
 const video = document.querySelector(".section_bg_video");
 
-const isMoblie = window.matchMedia("(max-width: 768px)").matches;
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 const initLenis = () => {
   lenis = new Lenis({
@@ -24,7 +23,7 @@ const initLenis = () => {
     touchMultiplier: 2,
 
     content: document.querySelector(".section_content"),
-    orientation: isMoblie ? "vertical" : "horizontal",
+    orientation: isMobile ? "vertical" : "horizontal",
   });
 
   lenis.on("scroll", ({ scroll, limit }) => progress(scroll, limit));
@@ -36,12 +35,40 @@ const initLenis = () => {
   requestAnimationFrame(raf);
 };
 
-const activateKeypoints = (keypoints, element) => {};
+const activateKeypoints = (keypoints, element) => {
+  if (percentage >= keypoints) {
+    element.classList.add("--active");
+  } else {
+    element.classList.remove("--active");
+  }
+};
 
-const progress = (scroll, limit) => {};
+const progress = (scroll, limit) => {
+  let keypoints = [];
+  let scrollPercentage = (scroll / limit) * 100;
+
+  progressBar.dots.forEach((dot) => {
+    const dotPosition = dot.getBoundingClientRect().left;
+    const keypointsPercentage =
+      ((dotPosition - progressBarOffset) / window.innerWidth) * 100;
+
+    keypoints.push(keypointsPercentage);
+  });
+
+  percentage = keypoints[0] + (scrollPercentage * (100 - keypoints[0])) / 100;
+
+  progressBar.line.style.width = `${percentage}%`;
+  progressBar.dots.forEach((dot, index) =>
+    activateKeypoints(keypoints[index], dot)
+  );
+  progressBar.labels.forEach((label, index) =>
+    activateKeypoints(keypoints[index], label)
+  );
+};
 
 window.addEventListener("DOMContentLoaded", () => {
   initLenis();
   lenis.scrollTo(0);
+
   video.play();
 });
