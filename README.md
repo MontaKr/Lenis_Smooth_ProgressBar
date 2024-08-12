@@ -11,7 +11,7 @@
 ### StackBlitz
 
 JavaScript : [https://stackblitz.com/edit/vitejs-vite-5jvsjo?file=index.js](https://stackblitz.com/edit/vitejs-vite-5jvsjo?file=index.js) \
-React : [https://stackblitz.com/edit/vitejs-vite-dtyep2?file=src%2FApp.jsx,src%2Fstyle.jsx,src%2Fmain.jsx](https://stackblitz.com/edit/vitejs-vite-dtyep2?file=src%2FApp.jsx,src%2Fstyle.jsx,src%2Fmain.jsx)
+React : [https://stackblitz.com/edit/vitejs-vite-dtyep2?file=README.md](https://stackblitz.com/edit/vitejs-vite-dtyep2?file=README.md)
 
 ---
 
